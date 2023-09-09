@@ -53,4 +53,7 @@ dependencies {
 
     //Firebase Auth
     implementation 'com.google.firebase:firebase-auth-ktx'
+
+    //Cloud Firestore
+    implementation 'com.google.firebase:firebase-firestore'
 }
