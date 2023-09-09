@@ -28,5 +28,24 @@
         android:padding="15dp"
         android:layout_marginTop="20sp"
         />
+    <Button
+        android:id="@+id/bt_lerDadosDB"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Ler"
+        android:textSize="18sp"
+        android:layout_gravity="center"
+        android:padding="15dp"
+        android:layout_marginTop="20sp"
+        />
+    <TextView
+        android:id="@+id/txt_resultado"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=""
+        android:textSize="18sp"
+        android:layout_gravity="center"
+        android:layout_marginTop="20dp"
+        />
 
 </LinearLayout>

@@ -43,6 +43,17 @@ class TelaPrincipal : AppCompatActivity() {
                     Log.d("db", "Erro ao salvar os dados do usuário!")
                 }
         }
+
+        binding.btLerDadosDB.setOnClickListener {
+            db.collection("Usuários").document("Joao")
+                .addSnapshotListener { documento, error ->
+                    if(documento != null) {
+                        val idade = documento.getLong("idade")
+                        binding.txtResultado.text = idade.toString()
+                        //binding.txtResultado.text = documento.getString("sobrenome")
+                    }
+                }
+        }
     }
 
     private fun voltarTelaLogin() {
