@@ -31,12 +31,12 @@ class TelaPrincipal : AppCompatActivity() {
 
         binding.btGravarDadosDB.setOnClickListener {
             val usuariosMap = hashMapOf(
-                "nome" to "Joao",
+                "nome" to "Maria",
                 "sobrenome" to "Oliveira",
                 "idade" to 22
             )
 
-            db.collection("Usuários").document("Joao")
+            db.collection("Usuários").document("Maria")
                 .set(usuariosMap).addOnCompleteListener {
                     Log.d("db", "Sucesso ao salvar os dados do usuário!")
                 }.addOnFailureListener {
@@ -56,18 +56,22 @@ class TelaPrincipal : AppCompatActivity() {
                 }
         }
         binding.btAtualizarDadosDB.setOnClickListener {
-            val usuariosMap = hashMapOf(
-                "nome" to "Joao",
-                "sobrenome" to "Oliveira",
-                "idade" to 22
-            )
 
             db.collection("Usuários").document("Joao")
                 .update("sobrenome", "Mendes").addOnCompleteListener {
                     Log.d("db_update", "Sucesso ao atualizar os dados do usuário!")
                 }
         }
+        binding.btDeletarDadosDB.setOnClickListener {
+            db.collection("Usuários").document("Maria")
+                .delete().addOnCompleteListener {
+                    Log.d("db_update", "Sucesso ao deletar os dados do usuário!")
+                }
+        }
+
     }
+
+
 
     private fun voltarTelaLogin() {
         val intent = Intent(this, FormLogin::class.java)

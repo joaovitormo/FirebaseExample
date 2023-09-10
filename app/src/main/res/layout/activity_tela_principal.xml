@@ -39,6 +39,16 @@
         android:layout_marginTop="20sp"
         />
     <Button
+        android:id="@+id/bt_deletarDadosDB"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Deletar"
+        android:textSize="18sp"
+        android:layout_gravity="center"
+        android:padding="15dp"
+        android:layout_marginTop="20sp"
+        />
+    <Button
         android:id="@+id/bt_lerDadosDB"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
