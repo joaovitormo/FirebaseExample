@@ -47,11 +47,24 @@ class TelaPrincipal : AppCompatActivity() {
         binding.btLerDadosDB.setOnClickListener {
             db.collection("Usuários").document("Joao")
                 .addSnapshotListener { documento, error ->
-                    if(documento != null) {
+                    if (documento != null) {
+                        Log.d("db", documento.toString())
                         val idade = documento.getLong("idade")
                         binding.txtResultado.text = idade.toString()
                         //binding.txtResultado.text = documento.getString("sobrenome")
                     }
+                }
+        }
+        binding.btAtualizarDadosDB.setOnClickListener {
+            val usuariosMap = hashMapOf(
+                "nome" to "Joao",
+                "sobrenome" to "Oliveira",
+                "idade" to 22
+            )
+
+            db.collection("Usuários").document("Joao")
+                .update("sobrenome", "Mendes").addOnCompleteListener {
+                    Log.d("db_update", "Sucesso ao atualizar os dados do usuário!")
                 }
         }
     }
